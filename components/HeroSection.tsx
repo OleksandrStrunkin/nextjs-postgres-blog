@@ -22,7 +22,7 @@ export default function HeroSection() {
         />
       </div>
       <div className="block md:flex py-10 px-6 md:py-20 md:px-18 lg:pt-[122px] lg:py-10">
-        <div className="mx-auto max-w-3xl  text-white">
+        <div className="mx-auto max-w-3xl text-white">
           <p className=" text-sm font-medium md:mb-6 lg:text-[16px]">
             Featured Post
           </p>
