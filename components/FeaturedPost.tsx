@@ -15,10 +15,7 @@ export default function FeaturedPost() {
         </div>
         <div
           className="
-            /* Мобілка: відносно картинки, невеликий відступ зверху */
-            relative mx-auto bg-white mt-6.5 rounded-xl shadow-md 
-            
-            /* Десктоп: накладається на картинку праворуч */
+            relative mx-auto bg-white mt-6.5 rounded-xl 
             md:absolute md:mt-0 md:-bottom-[24%] md:right-0 md:w-165 md:h-64.5 md:p-5 md:shadow-xl
           "
         >
