@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "category": "Travel",
+    "date": "13 March 2023",
+    "title": "8 Rules Of Travelling In Sea You Need To Know",
+    "excerpt": "Travelling in sea has many advantages. Some of the advantages of transporting goods by sea include: you can ship large volumes at costs.",
+    "content": "Full text about sea travel rules: from safety protocols to choosing the right cabin and managing sea sickness during long voyages.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/travel1/800/600"
+  },
+  {
+    "id": 2,
+    "category": "Technology",
+    "date": "20 May 2023",
+    "title": "Why Next.js 15 is a Game Changer for Fullstack Devs",
+    "excerpt": "Exploring the new features of Next.js 15, including improved caching strategies and the latest App Router enhancements.",
+    "content": "Deep dive into Next.js 15 server actions, partial pre-rendering, and how it integrates seamlessly with modern databases like Supabase.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/tech1/800/600"
+  },
+  {
+    "id": 3,
+    "category": "Lifestyle",
+    "date": "05 June 2023",
+    "title": "10 Habits for Productive Remote Work",
+    "excerpt": "Working from home can be tough. Here are the top 10 habits to keep your productivity high without burning out.",
+    "content": "From setting up a dedicated workspace to using the Pomodoro technique and setting strict boundaries between work and personal life.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/life1/800/600"
+  },
+  {
+    "id": 4,
+    "category": "Travel",
+    "date": "12 July 2023",
+    "title": "Hidden Gems: Top 5 Destinations in Ukraine",
+    "excerpt": "Discover beautiful and less-known places in Ukraine that offer breathtaking views and rich cultural history.",
+    "content": "Detailed guide to places like the pink salt lakes in Kherson region, the Bakota bay, and the mystical forests of the Carpathians.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/ukraine1/800/600"
+  },
+  {
+    "id": 5,
+    "category": "Design",
+    "date": "28 August 2023",
+    "title": "Mastering Tailwind CSS for Clean UI",
+    "excerpt": "How to use utility-first CSS to build responsive and beautiful interfaces faster than ever before.",
+    "content": "Tips on maintaining a clean codebase with Tailwind, using @apply, and customizing your tailwind.config.js for unique brand colors.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/design1/800/600"
+  },
+  {
+    "id": 6,
+    "category": "Development",
+    "date": "15 September 2023",
+    "title": "Getting Started with React Native and Expo",
+    "excerpt": "Everything you need to know to build your first cross-platform mobile application using Expo Go.",
+    "content": "Guide on setting up the environment, using native components, and deploying your first Android/iOS app to the store.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/mobile1/800/600"
+  },
+  {
+    "id": 7,
+    "category": "AI",
+    "date": "03 October 2023",
+    "title": "Integrating OpenAI API into your React App",
+    "excerpt": "Learn how to build smart applications by connecting your frontend to LLMs for text analysis and generation.",
+    "content": "Step-by-step tutorial on creating API routes in Next.js to securely handle OpenAI prompts and stream responses to the client.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/ai1/800/600"
+  },
+  {
+    "id": 8,
+    "category": "Nature",
+    "date": "22 November 2023",
+    "title": "The Science of Tropical Rain Forests",
+    "excerpt": "Why rain forests are the lungs of our planet and why protecting them is more critical now than ever.",
+    "content": "Exploring biodiversity, the water cycle in tropical regions, and the impact of deforestation on global climate change.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/nature1/800/600"
+  },
+  {
+    "id": 9,
+    "category": "Backend",
+    "date": "10 January 2024",
+    "title": "SQL vs NoSQL: Choosing the Right Database",
+    "excerpt": "A comparison between PostgreSQL and MongoDB for your next fullstack project based on data structure.",
+    "content": "Analysis of ACID compliance, scalability, and developer experience when using Supabase versus Atlas MongoDB.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/db1/800/600"
+  },
+  {
+    "id": 10,
+    "category": "Career",
+    "date": "05 February 2024",
+    "title": "How to Build a Strong Frontend Portfolio",
+    "excerpt": "Tips on selecting the right projects and presenting them to catch the eye of recruiters and tech leads.",
+    "content": "Advice on showcasing your technical stack, writing clean README files, and emphasizing your problem-solving skills through real-world apps.",
+    "author": "Garry Gudini",
+    "image": "https://picsum.photos/seed/career1/800/600"
+  }
+]
