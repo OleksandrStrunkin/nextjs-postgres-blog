@@ -1,49 +1,62 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-export default function Header() {
-  const [mobile, setMobile] = useState(true);
 
-  const toggleMobile = () => {
-    if (window.innerWidth < 320) {
-      setMobile(!mobile);
-    }
-  };
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white">
-      <div className="mx-auto max-w-3xl p-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold flex items-center gap-3">
-          <Image src="/logo_icon.svg" alt="logo" width={31} height={31} /> Sarrin</h1>
-        <nav>
-          {mobile ? (
-            <button
-              className="md:hidden"
-              onClick={toggleMobile}
-            >
-              <Image src="/menu_icon.svg" alt="menu" width={34} height={34} />
-            </button>
-          ) : (
-            <ul className="flex text-base font-medium">
-              <li>
-                <a href="#" className="text-black ">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-black ">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-black ">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          )}
+    <header className="w-full bg-zinc-950 border-b border-zinc-800">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <h1 className="text-2xl font-bold flex items-center gap-3 text-white">
+          <Image src="/logo_icon.svg" alt="logo" width={31} height={31} />
+          Sarrin
+        </h1>
+
+        <nav className="flex items-center gap-4">
+          <div className="hidden items-center gap-6 text-sm font-medium text-slate-200 md:flex">
+            <a href="#blog" className="hover:text-white transition">
+              Blog
+            </a>
+            <a href="#newsletter" className="hover:text-white transition">
+              Newsletter
+            </a>
+            <a href="#" className="hover:text-white transition">
+              About
+            </a>
+          </div>
+
+          <button
+            aria-label="Toggle navigation"
+            className="md:hidden"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            <Image src="/menu_icon.svg" alt="menu" width={30} height={30} />
+          </button>
         </nav>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t border-zinc-800 bg-zinc-950/95 px-6 py-4">
+          <ul className="space-y-3 text-sm font-medium text-slate-200">
+            <li>
+              <a href="#blog" className="block hover:text-white transition">
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="#newsletter" className="block hover:text-white transition">
+                Newsletter
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block hover:text-white transition">
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
