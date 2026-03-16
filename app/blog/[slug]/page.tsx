@@ -1,8 +1,19 @@
+import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
+import PopularPostsSection from "@/components/PopularPostsSection";
+import NewsletterSection from "@/components/NewsletterSection";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+function formatDate(dateString: string) {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 }
 
 export default async function BlogPost({ params }: PageProps) {
@@ -19,31 +30,80 @@ export default async function BlogPost({ params }: PageProps) {
     notFound();
   }
 
+  const { data: allPosts } = await supabase
+    .from("Post")
+    .select("*")
+    .eq("published", true)
+    .order("createdAt", { ascending: false })
+    .limit(6);
+
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
-      <article className="rounded-3xl border border-zinc-800 bg-zinc-950/40 p-10 shadow-xl shadow-black/20">
-        <header className="mb-10">
-          <h1 className="text-4xl font-semibold text-white leading-tight">
-            {post.title}
-          </h1>
-          <p className="mt-4 text-lg text-slate-300">{post.excerpt}</p>
-          <time className="mt-4 block text-sm text-slate-400">
-            {new Date(post.createdAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-        </header>
-        <div className="prose prose-invert prose-lg max-w-none text-slate-100">
-          {/* For now, render content as plain text. Later we can add markdown rendering */}
-          <div
-            dangerouslySetInnerHTML={{
-              __html: post.content.replace(/\n/g, "<br>"),
-            }}
-          />
-        </div>
-      </article>
+    <div className="bg-white">
+      {/* Post Header */}
+      <div className="mx-auto max-w-3xl px-6 pt-20 pb-16">
+        <article>
+          <header>
+            <div className="flex items-center gap-3 text-sm">
+              <span className="font-semibold text-[#7C4EE4]">
+                {post.category ?? "General"}
+              </span>
+              <span className="text-[#999999]">
+                {formatDate(post.createdAt)}
+              </span>
+            </div>
+
+            <h1 className="mt-6 text-4xl font-bold text-[#333333] md:text-5xl leading-tight">
+              {post.title}
+            </h1>
+          </header>
+
+          {/* Featured Image */}
+          <div className="mt-10 relative w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/featured_post.jpg"
+              alt={post.title}
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+
+          {/* Content */}
+          <div className="mt-12 prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#333333] prose-p:text-[#666666] prose-a:text-[#7C4EE4] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#333333] prose-code:text-[#7C4EE4] prose-code:bg-[#F8F7FF] prose-code:px-2 prose-code:py-1 prose-code:rounded">
+            <div
+              className="text-base leading-relaxed text-[#666666]"
+              dangerouslySetInnerHTML={{
+                __html: post.content
+                  .replace(/\n\n/g, "</p><p>")
+                  .replace(/^<p>/, "")
+                  .replace(/<\/p>$/, ""),
+              }}
+            />
+
+            {/* Custom blockquote styling */}
+            <style>{`
+              blockquote {
+                border-left: 4px solid #7C4EE4;
+                padding-left: 1.5rem;
+                font-style: italic;
+                color: #666666;
+                background-color: #f8f7ff;
+                padding: 1rem 1.5rem;
+                margin: 2rem 0;
+              }
+            `}</style>
+          </div>
+        </article>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-[#E0E0E0]"></div>
+
+      {/* Popular Posts */}
+      <PopularPostsSection posts={allPosts ?? []} />
+
+      {/* Newsletter & Footer */}
+      <NewsletterSection />
     </div>
   );
 }

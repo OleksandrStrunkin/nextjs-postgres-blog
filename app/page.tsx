@@ -10,7 +10,7 @@ export default async function Home() {
     .order("createdAt", { ascending: false });
 
   return (
-    <div className="bg-white pt-20">
+    <div className="bg-white">
       <HeroSection />
       <HomeContent posts={posts || []} />
     </div>

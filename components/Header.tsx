@@ -31,9 +31,6 @@ export default function Header() {
             >
               Blog
             </Link>
-            <a href="#newsletter" className="hover:text-[#7C4EE4] transition">
-              Newsletter
-            </a>
             <Link
               href="/about"
               className={`transition ${
@@ -42,12 +39,14 @@ export default function Header() {
             >
               About
             </Link>
-            <a
-              href="#contact"
-              className="rounded-full bg-[#7C4EE4] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90"
+            <Link
+              href="/contact"
+              className={`rounded-full bg-[#7C4EE4] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90 ${
+                isActive("/contact") ? "" : ""
+              }`}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           <button
@@ -74,14 +73,6 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <a
-                href="#newsletter"
-                className="block hover:text-[#7C4EE4] transition"
-              >
-                Newsletter
-              </a>
-            </li>
-            <li>
               <Link
                 href="/about"
                 className={`block transition ${
@@ -92,12 +83,12 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="block rounded-full bg-[#7C4EE4] px-5 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90"
               >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

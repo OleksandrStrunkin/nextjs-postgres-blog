@@ -34,12 +34,12 @@ export default function Footer() {
             >
               About
             </Link>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="hover:text-[#7C4EE4] transition-colors"
             >
               Contact Us
-            </a>
+            </Link>
           </nav>
 
           {/* Social Media Icons */}
