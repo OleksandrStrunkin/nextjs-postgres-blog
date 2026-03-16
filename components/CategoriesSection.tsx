@@ -15,11 +15,11 @@ export default function CategoriesSection({
 
   return (
     <section className="mx-auto w-full max-w-5xl px-6 py-14 md:py-20">
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-10 shadow-sm backdrop-blur-md">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+      <div className="rounded-2xl border border-[#999999] bg-white p-10 shadow-sm">
+        <h2 className="text-3xl font-semibold text-[#333333] sm:text-4xl">
           Explore by category
         </h2>
-        <p className="mt-4 max-w-2xl text-slate-300">
+        <p className="mt-4 max-w-2xl text-[#666666]">
           Quickly jump into the topics that interest you most. Tap a category to
           filter posts and discover more content.
         </p>
@@ -31,10 +31,10 @@ export default function CategoriesSection({
                 key={category}
                 type="button"
                 onClick={() => onSelectCategory(category)}
-                className={`rounded-full border px-5 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                className={`rounded-full border px-5 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-[#7C4EE4] ${
                   isActive
-                    ? "border-indigo-500 bg-indigo-500/20 text-white"
-                    : "border-zinc-800 bg-zinc-900/40 text-slate-100 hover:border-indigo-500 hover:bg-indigo-500/20 hover:text-white"
+                    ? "border-[#7C4EE4] bg-[#7C4EE4]/20 text-[#333333]"
+                    : "border-[#999999] bg-white text-[#666666] hover:border-[#7C4EE4] hover:bg-[#7C4EE4]/10 hover:text-[#333333]"
                 }`}
               >
                 {category}
@@ -45,7 +45,7 @@ export default function CategoriesSection({
             <button
               type="button"
               onClick={() => onSelectCategory("")}
-              className="rounded-full border border-zinc-700 bg-zinc-900/40 px-5 py-2 text-sm font-medium text-slate-300 transition hover:border-indigo-500 hover:bg-indigo-500/20 hover:text-white"
+              className="rounded-full border border-[#999999] bg-white px-5 py-2 text-sm font-medium text-[#666666] transition hover:border-[#7C4EE4] hover:bg-[#7C4EE4]/10 hover:text-[#333333]"
             >
               Clear filter
             </button>

@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05060a;
-  --foreground: #f8fafc;
+  --background: #ffffff;
+  --foreground: #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #7C4EE4;
+  --color-dark: #333333;
+  --color-gray-secondary: #666666;
+  --color-gray-border: #999999;
   --font-raleway: var(--font-raleway);
   --font-roboto: var(--font-roboto);
   --font-sans: var(--font-roboto);
@@ -17,6 +21,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-roboto), ui-sans-serif, system-ui;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 h1,
@@ -26,4 +32,6 @@ h4,
 h5,
 h6 {
   font-family: var(--font-raleway), sans-serif;
+  font-weight: bold;
+  color: #333333;
 }

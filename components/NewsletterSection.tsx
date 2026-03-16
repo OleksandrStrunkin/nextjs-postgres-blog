@@ -44,17 +44,17 @@ export default function NewsletterSection() {
       id="newsletter"
       className="mx-auto w-full max-w-5xl px-6 py-14 md:py-20"
     >
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-10 shadow-sm backdrop-blur-md">
+      <div className="rounded-2xl border border-[#999999] bg-white p-10 shadow-sm">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+            <h2 className="text-3xl font-semibold text-[#333333] sm:text-4xl">
               Stay in the loop
             </h2>
-            <p className="mt-4 max-w-md text-slate-300">
+            <p className="mt-4 max-w-md text-[#666666]">
               Subscribe to our monthly newsletter to receive the latest posts,
               design tips, and Supabase updates straight to your inbox.
             </p>
-            <p className="mt-4 max-w-md text-sm text-slate-400">
+            <p className="mt-4 max-w-md text-sm text-[#666666]">
               Built by a former Sales Department Head (managing 40+ people) now
               building React apps—passionate about AI, clean code, and complex
               systems.
@@ -82,12 +82,12 @@ export default function NewsletterSection() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="your@email.com"
-              className="w-full rounded-xl border border-zinc-700 bg-zinc-900/70 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+              className="w-full rounded-lg border border-[#999999] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#666666] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/30"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="rounded-xl bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-50"
+              className="rounded-lg bg-[#7C4EE4] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "loading" ? "Subscribing..." : "Subscribe"}
             </button>

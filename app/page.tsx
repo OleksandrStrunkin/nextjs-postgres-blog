@@ -19,9 +19,9 @@ export default async function Home() {
     .filter((c): c is string => Boolean(c));
 
   return (
-    <div className="bg-zinc-950">
-      <div className="mx-auto max-w-6xl">
-        <HeroSection />
+    <div className="bg-white pt-20">
+      <HeroSection />
+      <div className="mx-auto w-full max-w-6xl">
         <FeaturedPost />
         <HomeContent posts={posts || []} categories={categories} />
       </div>

@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${raleway.variable} ${roboto.variable} antialiased bg-zinc-950 text-slate-100 min-h-screen`}
+        className={`${raleway.variable} ${roboto.variable} antialiased bg-white text-gray-900 min-h-screen`}
       >
         <div className="flex min-h-screen flex-col">
           <Header />
