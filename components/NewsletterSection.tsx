@@ -42,36 +42,65 @@ export default function NewsletterSection() {
   return (
     <section
       id="newsletter"
-      className="mx-auto w-full max-w-5xl px-6 py-14 md:py-20"
+      className="relative bg-[#7C4EE4] px-6 py-20 overflow-hidden"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgba(255,255,255,0.05);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgba(255,255,255,0);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,50 Q25,30 50,50 T100,50' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='2'/%3E%3C/svg%3E")`,
+        backgroundSize: "200px 200px",
+      }}
     >
-      <div className="rounded-2xl border border-[#999999] bg-white p-10 shadow-sm">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div>
-            <h2 className="text-3xl font-semibold text-[#333333] sm:text-4xl">
-              Stay in the loop
-            </h2>
-            <p className="mt-4 max-w-md text-[#666666]">
-              Subscribe to our monthly newsletter to receive the latest posts,
-              design tips, and Supabase updates straight to your inbox.
-            </p>
-            <p className="mt-4 max-w-md text-sm text-[#666666]">
-              Built by a former Sales Department Head (managing 40+ people) now
-              building React apps—passionate about AI, clean code, and complex
-              systems.
-            </p>
-            {message && (
-              <p
-                className={`mt-4 max-w-md text-sm ${
-                  status === "success" ? "text-emerald-300" : "text-rose-300"
-                }`}
-              >
-                {message}
-              </p>
-            )}
-          </div>
+      <div className="absolute -top-20 -left-20 w-40 h-40 pointer-events-none">
+        <svg
+          className="w-full h-full opacity-10"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 0,100 Q 50,50 100,100 T 200,100"
+            fill="none"
+            stroke="white"
+            strokeWidth="3"
+          />
+          <path
+            d="M 0,120 Q 50,70 100,120 T 200,120"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+      <div className="absolute -bottom-20 -right-20 w-40 h-40 pointer-events-none">
+        <svg
+          className="w-full h-full opacity-10"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 200,100 Q 150,50 100,100 T 0,100"
+            fill="none"
+            stroke="white"
+            strokeWidth="3"
+          />
+          <path
+            d="M 200,120 Q 150,70 100,120 T 0,120"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 relative z-10">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-white md:text-5xl leading-tight">
+            Get our stories delivered From
+            <span className="block">us to your inbox weekly.</span>
+          </h2>
+        </div>
+
+        <div className="w-full border border-white rounded-lg p-1 sm:max-w-md">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 sm:flex-row"
+            className="flex flex-col gap-3 sm:flex-row sm:gap-0"
           >
             <label className="sr-only" htmlFor="newsletter-email">
               Email address
@@ -81,18 +110,33 @@ export default function NewsletterSection() {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="your@email.com"
-              className="w-full rounded-lg border border-[#999999] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#666666] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/30"
+              placeholder="Your Email"
+              className="flex-1 bg-white px-5 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:outline-none"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="rounded-lg bg-[#7C4EE4] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90 disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-[#7C4EE4] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7C4EE4]/90 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {status === "loading" ? "Subscribing..." : "Subscribe"}
+              {status === "loading" ? "Subscribing..." : "Get started"}
             </button>
           </form>
         </div>
+
+        <p className="text-center text-xs text-white/70 max-w-md">
+          Get a response tomorrow if you submit by 9pm today. If we received
+          after 9pm will get a response the following day.
+        </p>
+
+        {message && (
+          <p
+            className={`text-center text-sm ${
+              status === "success" ? "text-emerald-200" : "text-rose-300"
+            }`}
+          >
+            {message}
+          </p>
+        )}
       </div>
     </section>
   );

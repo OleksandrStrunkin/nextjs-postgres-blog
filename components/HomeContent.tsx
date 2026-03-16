@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import BlogSection from "@/components/BlogSection";
-import CategoriesSection from "@/components/CategoriesSection";
+import { useMemo } from "react";
 import NewsletterSection from "@/components/NewsletterSection";
+import PopularPostsSection from "@/components/PopularPostsSection";
+import RecentPostsSection from "@/components/RecentPostsSection";
 
 interface Post {
   id: number;
@@ -18,30 +18,20 @@ interface Post {
 
 interface HomeContentProps {
   posts: Post[];
-  categories: string[];
 }
 
-export default function HomeContent({ posts, categories }: HomeContentProps) {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-
-  const filteredPosts = useMemo(() => {
-    if (!activeCategory) return posts;
-    return posts.filter((post) => post.category === activeCategory);
-  }, [activeCategory, posts]);
+export default function HomeContent({ posts }: HomeContentProps) {
+  const featuredPost = posts[0];
+  const recentPosts = useMemo(() => posts.slice(1, 4), [posts]);
+  const popularPosts = useMemo(() => posts.slice(4, 10), [posts]);
 
   return (
     <>
-      <BlogSection posts={filteredPosts} />
-      <CategoriesSection
-        categories={categories}
-        activeCategory={activeCategory}
-        onSelectCategory={(category) =>
-          setActiveCategory((prev) => {
-            if (!category) return null;
-            return prev === category ? null : category;
-          })
-        }
+      <RecentPostsSection
+        featuredPost={featuredPost}
+        recentPosts={recentPosts}
       />
+      <PopularPostsSection posts={popularPosts} />
       <NewsletterSection />
     </>
   );
