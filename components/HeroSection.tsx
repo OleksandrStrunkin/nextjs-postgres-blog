@@ -34,6 +34,11 @@ export default function HeroSection() {
             increased capabilities, and becoming more personal and possibly
             cute. For example, home robots will overcome navigation, direction.
           </p>
+          <p className="text-sm text-slate-300 mb-7 md:max-w-[300px] lg:max-w-[416px]">
+            Transitioning from a Sales Department Head (managing 40+ people) to
+            a Junior React Developer. Passionate about AI, complex systems, and
+            clean code.
+          </p>
           <button className="bg-indigo-500/90 hover:bg-indigo-400 font-bold text-sm mb-14 text-white px-9 py-3 lg:py-4 lg:px-12 rounded-xl shadow-lg shadow-indigo-500/20 transition">
             Read More
           </button>

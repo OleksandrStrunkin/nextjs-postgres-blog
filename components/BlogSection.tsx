@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 interface Post {
@@ -33,41 +35,52 @@ export default function BlogSection({ posts }: BlogSectionProps) {
       </div>
 
       <div className="mt-10 grid gap-8 md:grid-cols-2">
-        {posts.slice(0, 4).map((post) => (
-          <Link
-            key={post.id}
-            href={`/blog/${post.slug}`}
-            className="group block rounded-2xl border border-zinc-800 bg-zinc-950/40 p-6 shadow-sm transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-zinc-900/70 hover:shadow-lg"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-indigo-300">
-                  {new Date(post.createdAt).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                </p>
-                <h3 className="mt-2 text-xl font-semibold text-white">
-                  {post.title}
-                </h3>
-              </div>
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-200">
-                {post.title.charAt(0)}
-              </div>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-300">
-              {post.excerpt}
+        {posts.length === 0 ? (
+          <div className="col-span-full rounded-2xl border border-zinc-800 bg-zinc-950/40 p-10 text-center">
+            <p className="text-lg font-semibold text-slate-200">
+              No posts found for this category.
             </p>
-            <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-indigo-300">
-              <span className="transition group-hover:text-white">
-                Read more
-              </span>
-              <span className="inline-block h-1 w-1 rounded-full bg-indigo-300" />
-              <span className="text-slate-400">Continue</span>
-            </div>
-          </Link>
-        ))}
+            <p className="mt-2 text-sm text-slate-400">
+              Try selecting a different category or reset the filter.
+            </p>
+          </div>
+        ) : (
+          posts.slice(0, 4).map((post) => (
+            <Link
+              key={post.id}
+              href={`/blog/${post.slug}`}
+              className="group block rounded-2xl border border-zinc-800 bg-zinc-950/40 p-6 shadow-sm transition hover:-translate-y-1 hover:border-indigo-500 hover:bg-zinc-900/70 hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium text-indigo-300">
+                    {new Date(post.createdAt).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold text-white">
+                    {post.title}
+                  </h3>
+                </div>
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-200">
+                  {post.title.charAt(0)}
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                {post.excerpt}
+              </p>
+              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-indigo-300">
+                <span className="transition group-hover:text-white">
+                  Read more
+                </span>
+                <span className="inline-block h-1 w-1 rounded-full bg-indigo-300" />
+                <span className="text-slate-400">Continue</span>
+              </div>
+            </Link>
+          ))
+        )}
       </div>
     </section>
   );

@@ -1,8 +1,16 @@
+"use client";
+
 interface CategoriesSectionProps {
   categories: string[];
+  activeCategory: string | null;
+  onSelectCategory: (category: string) => void;
 }
 
-export default function CategoriesSection({ categories }: CategoriesSectionProps) {
+export default function CategoriesSection({
+  categories,
+  activeCategory,
+  onSelectCategory,
+}: CategoriesSectionProps) {
   const unique = Array.from(new Set(categories)).slice(0, 8);
 
   return (
@@ -16,15 +24,32 @@ export default function CategoriesSection({ categories }: CategoriesSectionProps
           filter posts and discover more content.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          {unique.map((category) => (
+          {unique.map((category) => {
+            const isActive = category === activeCategory;
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => onSelectCategory(category)}
+                className={`rounded-full border px-5 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                  isActive
+                    ? "border-indigo-500 bg-indigo-500/20 text-white"
+                    : "border-zinc-800 bg-zinc-900/40 text-slate-100 hover:border-indigo-500 hover:bg-indigo-500/20 hover:text-white"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
+          {activeCategory && (
             <button
-              key={category}
               type="button"
-              className="rounded-full border border-zinc-800 bg-zinc-900/40 px-5 py-2 text-sm font-medium text-slate-100 transition hover:border-indigo-500 hover:bg-indigo-500/20 hover:text-white"
+              onClick={() => onSelectCategory("")}
+              className="rounded-full border border-zinc-700 bg-zinc-900/40 px-5 py-2 text-sm font-medium text-slate-300 transition hover:border-indigo-500 hover:bg-indigo-500/20 hover:text-white"
             >
-              {category}
+              Clear filter
             </button>
-          ))}
+          )}
         </div>
       </div>
     </section>
