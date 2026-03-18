@@ -5,14 +5,14 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Hero Header */}
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
-        <p className="text-xs font-semibold tracking-widest">
+      <section className="mx-auto text-center max-w-6xl px-6 pt-20 pb-10">
+        <p className="text-base font-bold text-gray-medium tracking-widest">
           ABOUT US
         </p>
-        <h1 className="mt-4 text-4xl font-semibold text-dark md:text-5xl leading-tight">
+        <h1 className="mt-4 text-5xl max-w-182 mx-auto font-semibold text-dark md:text-5xl leading-tight">
           Creative Blog Writting and publishing site
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-medium">
+        <p className="mt-4 text-base leading-relaxed text-gray-medium">
           Leverage agile frameworks to provide a robust synopsis for high level
           overviews. Iterative approaches to corporate strategy foster
           collaborative thinking to further the overall value proposition.
