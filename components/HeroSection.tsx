@@ -32,12 +32,6 @@ export default function HeroSection() {
             How AI will Change the Future
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white">
-            Transitioning from a Sales Department Head (managing 40+ people) to
-            a Junior React Developer. Passionate about AI, complex systems, and
-            clean code.
-          </p>
-
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90">
             The future of AI will see home robots having enhanced intelligence,
             increased capabilities, and becoming more personal and possibly

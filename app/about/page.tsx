@@ -6,19 +6,18 @@ export default function AboutPage() {
     <div className="bg-white">
       {/* Hero Header */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
-        <p className="text-xs font-semibold tracking-widest text-primary">
+        <p className="text-xs font-semibold tracking-widest">
           ABOUT US
         </p>
         <h1 className="mt-4 text-4xl font-semibold text-dark md:text-5xl leading-tight">
-          From Leading Teams to{" "}
-          <span className="text-primary">Building Web Apps</span>
+          Creative Blog Writting and publishing site
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-medium">
-          A career pivot from managing 40+ people as a Sales Department Head to
-          mastering React, TypeScript, and modern frontend architecture. This
-          journey reflects a passion for creative problem-solving, clean code,
-          and building products that matter. Here&apos;s how I approach web
-          development and the values that guide my work.
+          Leverage agile frameworks to provide a robust synopsis for high level
+          overviews. Iterative approaches to corporate strategy foster
+          collaborative thinking to further the overall value proposition.
+          Organically grow the holistic world view of disruptive innovation via
+          workplace diversity and empowerment.
         </p>
       </section>
 
@@ -26,7 +25,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="relative w-full h-80 md:h-[500px] rounded-3xl overflow-hidden shadow-lg">
           <Image
-            src="/container_hero.jpg"
+            src="/about-bg.webp"
             alt="About - Team working"
             fill
             className="object-cover object-center"
