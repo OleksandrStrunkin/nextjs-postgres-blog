@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#7C4EE4]">
+    <section className="relative w-full overflow-hidden bg-primary">
       <div className="absolute -top-[22%] inset-0 z-0 pointer-events-none hidden lg:block">
         <Image
           src="/Mask group.svg"
@@ -44,7 +44,7 @@ export default function HeroSection() {
             cute. For example, home robots will overcome navigation, direction.
           </p>
 
-          <button className="mt-10 rounded-lg bg-white px-10 py-4 text-sm font-semibold text-[#7C4EE4] shadow-lg transition hover:bg-gray-100">
+          <button className="mt-10 rounded-lg bg-white px-10 py-4 text-sm font-semibold text-primary shadow-lg transition hover:bg-gray-100">
             Read More
           </button>
         </div>

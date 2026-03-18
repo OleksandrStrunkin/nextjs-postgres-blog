@@ -44,15 +44,15 @@ export default async function BlogPost({ params }: PageProps) {
         <article>
           <header>
             <div className="flex items-center gap-3 text-sm">
-              <span className="font-semibold text-[#7C4EE4]">
+              <span className="font-semibold text-primary">
                 {post.category ?? "General"}
               </span>
-              <span className="text-[#999999]">
+              <span className="text-gray-light">
                 {formatDate(post.createdAt)}
               </span>
             </div>
 
-            <h1 className="mt-6 text-4xl font-bold text-[#333333] md:text-5xl leading-tight">
+            <h1 className="mt-6 text-4xl font-bold text-dark md:text-5xl leading-tight">
               {post.title}
             </h1>
           </header>
@@ -69,9 +69,9 @@ export default async function BlogPost({ params }: PageProps) {
           </div>
 
           {/* Content */}
-          <div className="mt-12 prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#333333] prose-p:text-[#666666] prose-a:text-[#7C4EE4] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#333333] prose-code:text-[#7C4EE4] prose-code:bg-[#F8F7FF] prose-code:px-2 prose-code:py-1 prose-code:rounded">
+          <div className="mt-12 prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-dark prose-p:text-gray-medium prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-dark prose-code:text-primary prose-code:bg-[#F8F7FF] prose-code:px-2 prose-code:py-1 prose-code:rounded">
             <div
-              className="text-base leading-relaxed text-[#666666]"
+              className="text-base leading-relaxed text-gray-medium"
               dangerouslySetInnerHTML={{
                 __html: post.content
                   .replace(/\n\n/g, "</p><p>")
@@ -83,10 +83,10 @@ export default async function BlogPost({ params }: PageProps) {
             {/* Custom blockquote styling */}
             <style>{`
               blockquote {
-                border-left: 4px solid #7C4EE4;
+                border-left: 4px solid var(--color-primary);
                 padding-left: 1.5rem;
                 font-style: italic;
-                color: #666666;
+                color: var(--color-gray-medium);
                 background-color: #f8f7ff;
                 padding: 1rem 1.5rem;
                 margin: 2rem 0;

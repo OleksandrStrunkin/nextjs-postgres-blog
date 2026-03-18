@@ -12,21 +12,21 @@ export default function Header() {
     pathname === path || pathname.startsWith(`${path}/`);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-[#999999]">
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-light">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo_icon.svg" alt="logo" width={31} height={31} />
-          <span className="text-2xl font-bold text-[#333333] hover:text-[#7C4EE4] transition">
+          <span className="text-2xl font-bold text-dark hover:text-primary transition">
             Sarrin
           </span>
         </Link>
 
         <nav className="flex items-center gap-4">
-          <div className="hidden items-center gap-6 text-sm font-medium text-[#666666] md:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-gray-medium md:flex">
             <Link
               href="/blog"
               className={`transition ${
-                isActive("/blog") ? "text-[#7C4EE4]" : "hover:text-[#7C4EE4]"
+                isActive("/blog") ? "text-primary" : "hover:text-primary"
               }`}
             >
               Blog
@@ -34,14 +34,14 @@ export default function Header() {
             <Link
               href="/about"
               className={`transition ${
-                isActive("/about") ? "text-[#7C4EE4]" : "hover:text-[#7C4EE4]"
+                isActive("/about") ? "text-primary" : "hover:text-primary"
               }`}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className={`rounded-full bg-[#7C4EE4] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90 ${
+              className={`rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90 ${
                 isActive("/contact") ? "" : ""
               }`}
             >
@@ -60,13 +60,13 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-[#999999] bg-white/95 px-6 py-4">
-          <ul className="space-y-3 text-sm font-medium text-[#666666]">
+        <div className="md:hidden border-t border-gray-light bg-white/95 px-6 py-4">
+          <ul className="space-y-3 text-sm font-medium text-gray-medium">
             <li>
               <Link
                 href="/blog"
                 className={`block transition ${
-                  isActive("/blog") ? "text-[#7C4EE4]" : "hover:text-[#7C4EE4]"
+                  isActive("/blog") ? "text-primary" : "hover:text-primary"
                 }`}
               >
                 Blog
@@ -76,7 +76,7 @@ export default function Header() {
               <Link
                 href="/about"
                 className={`block transition ${
-                  isActive("/about") ? "text-[#7C4EE4]" : "hover:text-[#7C4EE4]"
+                  isActive("/about") ? "text-primary" : "hover:text-primary"
                 }`}
               >
                 About
@@ -85,7 +85,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="block rounded-full bg-[#7C4EE4] px-5 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90"
+                className="block rounded-full bg-primary px-5 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
               >
                 Contact Us
               </Link>

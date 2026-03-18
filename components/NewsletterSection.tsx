@@ -42,7 +42,7 @@ export default function NewsletterSection() {
   return (
     <section
       id="newsletter"
-      className="relative bg-[#7C4EE4] px-6 py-20 overflow-hidden"
+      className="relative bg-primary px-6 py-20 overflow-hidden"
       style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgba(255,255,255,0.05);stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:rgba(255,255,255,0);stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,50 Q25,30 50,50 T100,50' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='2'/%3E%3C/svg%3E")`,
         backgroundSize: "200px 200px",
@@ -111,12 +111,12 @@ export default function NewsletterSection() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Your Email"
-              className="flex-1 bg-white px-5 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:outline-none"
+              className="flex-1 bg-white px-5 py-3 text-sm text-dark placeholder:text-gray-light focus:outline-none"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="bg-[#7C4EE4] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7C4EE4]/90 disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === "loading" ? "Subscribing..." : "Get started"}
             </button>

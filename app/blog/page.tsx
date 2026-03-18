@@ -33,13 +33,13 @@ export default async function BlogArchive() {
   return (
     <div className="bg-white">
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-10 text-center">
-        <p className="text-xs font-semibold tracking-widest text-[#7C4EE4]">
+        <p className="text-xs font-semibold tracking-widest text-primary">
           OUR BLOGS
         </p>
-        <h1 className="mt-4 text-4xl font-semibold text-[#333333] md:text-5xl">
+        <h1 className="mt-4 text-4xl font-semibold text-dark md:text-5xl">
           Find our all blogs from here
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-[#666666]">
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-medium">
           Our blogs are written from very research research and well known
           writers writers so that we can provide you the best blog and articles
           articles for you to read them all along.
@@ -48,11 +48,11 @@ export default async function BlogArchive() {
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
         {sortedPosts.length === 0 ? (
-          <div className="rounded-3xl border border-[#999999] bg-white p-10 text-center shadow-sm">
-            <p className="text-lg font-semibold text-[#333333]">
+          <div className="rounded-3xl border border-gray-light bg-white p-10 text-center shadow-sm">
+            <p className="text-lg font-semibold text-dark">
               No posts available yet.
             </p>
-            <p className="mt-2 text-sm text-[#666666]">
+            <p className="mt-2 text-sm text-gray-medium">
               Once you publish posts, they’ll appear here in a nice grid.
             </p>
           </div>
@@ -61,7 +61,7 @@ export default async function BlogArchive() {
             {sortedPosts.map((post, index) => (
               <article
                 key={post.id}
-                className="group overflow-hidden rounded-3xl border border-[#999999] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#7C4EE4] hover:shadow-lg"
+                className="group overflow-hidden rounded-3xl border border-gray-light bg-white shadow-sm transition hover:-translate-y-1 hover:border-primary hover:shadow-lg"
               >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
@@ -73,30 +73,30 @@ export default async function BlogArchive() {
                 </div>
                 <div className="p-6">
                   <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
-                    <span className="text-[#7C4EE4]">
+                    <span className="text-primary">
                       {post.category ?? "General"}
                     </span>
-                    <span className="text-[#666666]">
+                    <span className="text-gray-medium">
                       {formatDate(post.createdAt)}
                     </span>
                   </div>
 
-                  <h2 className="mt-4 text-lg font-semibold text-[#333333]">
+                  <h2 className="mt-4 text-lg font-semibold text-dark">
                     {post.title}
                   </h2>
 
-                  <p className="mt-3 text-sm leading-relaxed text-[#666666] line-clamp-3">
+                  <p className="mt-3 text-sm leading-relaxed text-gray-medium line-clamp-3">
                     {post.excerpt}
                   </p>
 
-                  <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#7C4EE4]">
+                  <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-primary">
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="transition hover:text-[#7C4EE4]/90"
+                      className="transition hover:text-primary/90"
                     >
                       Read More...
                     </Link>
-                    <span className="inline-block h-1 w-1 rounded-full bg-[#7C4EE4]" />
+                    <span className="inline-block h-1 w-1 rounded-full bg-primary" />
                   </div>
                 </div>
               </article>

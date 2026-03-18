@@ -106,10 +106,10 @@ export default function ContactPage() {
     <div className="bg-white">
       {/* Header Section */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 text-center">
-        <h1 className="text-4xl font-bold text-[#333333] md:text-5xl">
+        <h1 className="text-4xl font-bold text-dark md:text-5xl">
           Get in Touch
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-sm text-[#666666]">
+        <p className="mt-4 max-w-2xl mx-auto text-sm text-gray-medium">
           Contact us to publish your latest web stories or share ideas to our
           website and get a good news.
         </p>
@@ -119,40 +119,40 @@ export default function ContactPage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Office Card */}
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-[#7C4EE4] transition">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#7C4EE4] text-white">
+          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
               </svg>
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#333333]">
+            <h3 className="mt-4 text-lg font-semibold text-dark">
               Office
             </h3>
-            <p className="mt-2 text-sm text-[#666666]">
+            <p className="mt-2 text-sm text-gray-medium">
               Victoria Street, London, UK
             </p>
           </div>
 
           {/* Email Card */}
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-[#7C4EE4] transition">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#7C4EE4] text-white">
+          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#333333]">Email</h3>
-            <p className="mt-2 text-sm text-[#666666]">hello@zarrin.com</p>
+            <h3 className="mt-4 text-lg font-semibold text-dark">Email</h3>
+            <p className="mt-2 text-sm text-gray-medium">hello@zarrin.com</p>
           </div>
 
           {/* Phone Card */}
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-[#7C4EE4] transition">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#7C4EE4] text-white">
+          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.92 7.02C15.24 5.18 12.04 4 8.5 4c-5.07 0-9.44 3.49-9.44 7.99 0 1.38.35 2.7.97 3.85L0 20.5l4.72-1.55c1.13.63 2.4 1.01 3.78 1.01 5.07 0 9.44-3.5 9.44-8 0-1.8-.63-3.49-1.82-4.94zM8.5 19c-1.38 0-2.74-.35-3.92-.99l-.28-.15-2.9.95.99-2.82-.18-.28c-.7-1.17-1.1-2.53-1.1-3.91 0-4.05 3.41-7.35 7.59-7.35 2.04 0 3.97.79 5.42 2.19 1.45 1.4 2.25 3.32 2.25 5.36 0 4.05-3.41 7.35-7.59 7.35z" />
               </svg>
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#333333]">Phone</h3>
-            <p className="mt-2 text-sm text-[#666666]">+001 634-3843</p>
+            <h3 className="mt-4 text-lg font-semibold text-dark">Phone</h3>
+            <p className="mt-2 text-sm text-gray-medium">+001 634-3843</p>
           </div>
         </div>
       </section>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-[#333333]"
+                    className="block text-sm font-medium text-dark"
                   >
                     Name
                   </label>
@@ -190,14 +190,14 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/20"
+                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     required
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-[#333333]"
+                    className="block text-sm font-medium text-dark"
                   >
                     Email
                   </label>
@@ -208,7 +208,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/20"
+                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     required
                   />
                 </div>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-[#333333]"
+                    className="block text-sm font-medium text-dark"
                   >
                     Phone
                   </label>
@@ -230,13 +230,13 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+001 (555) 000-000"
-                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/20"
+                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-[#333333]"
+                    className="block text-sm font-medium text-dark"
                   >
                     Subject
                   </label>
@@ -247,7 +247,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Subject"
-                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/20"
+                    className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-[#333333]"
+                  className="block text-sm font-medium text-dark"
                 >
                   Message
                 </label>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Your message..."
                   rows={5}
-                  className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-[#333333] placeholder:text-[#999999] focus:border-[#7C4EE4] focus:outline-none focus:ring-2 focus:ring-[#7C4EE4]/20"
+                  className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   required
                 ></textarea>
               </div>
@@ -289,7 +289,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={submitStatus.status === "loading"}
-                className="w-full rounded-lg bg-[#7C4EE4] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#7C4EE4]/90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {submitStatus.status === "loading"
                   ? "Sending..."
