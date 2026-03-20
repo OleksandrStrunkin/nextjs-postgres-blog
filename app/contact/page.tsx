@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import NewsletterSection from "@/components/NewsletterSection";
+import Icon from "@/components/Icon";
 
 interface FormState {
   name: string;
@@ -106,12 +107,12 @@ export default function ContactPage() {
     <div className="bg-white">
       {/* Header Section */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 text-center">
-        <h1 className="text-4xl font-bold text-dark md:text-5xl">
+        <h1 className="text-[clamp(1.5rem,4vw+1rem,3rem)] font-bold text-dark">
           Get in Touch
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-sm text-gray-medium">
-          Contact us to publish your latest web stories or share ideas to our
-          website and get a good news.
+        <p className="mt-4 max-w-77.5 mx-auto text-[12px] text-gray-light">
+          Contact us to publish your content and show ads to our website and get
+          a good reach.
         </p>
       </section>
 
@@ -121,9 +122,7 @@ export default function ContactPage() {
           {/* Office Card */}
           <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
-              <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-              </svg>
+              <Icon name="icon-office" className="w-5 h-5" />
             </div>
             <h3 className="mt-4 text-lg font-semibold text-dark">Office</h3>
             <p className="mt-2 text-sm text-gray-medium">
@@ -134,9 +133,7 @@ export default function ContactPage() {
           {/* Email Card */}
           <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
-              <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-              </svg>
+              <Icon name="icon-email" className="w-5 h-5" />
             </div>
             <h3 className="mt-4 text-lg font-semibold text-dark">Email</h3>
             <p className="mt-2 text-sm text-gray-medium">hello@zarrin.com</p>
@@ -145,9 +142,7 @@ export default function ContactPage() {
           {/* Phone Card */}
           <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
-              <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.92 7.02C15.24 5.18 12.04 4 8.5 4c-5.07 0-9.44 3.49-9.44 7.99 0 1.38.35 2.7.97 3.85L0 20.5l4.72-1.55c1.13.63 2.4 1.01 3.78 1.01 5.07 0 9.44-3.5 9.44-8 0-1.8-.63-3.49-1.82-4.94zM8.5 19c-1.38 0-2.74-.35-3.92-.99l-.28-.15-2.9.95.99-2.82-.18-.28c-.7-1.17-1.1-2.53-1.1-3.91 0-4.05 3.41-7.35 7.59-7.35 2.04 0 3.97.79 5.42 2.19 1.45 1.4 2.25 3.32 2.25 5.36 0 4.05-3.41 7.35-7.59 7.35z" />
-              </svg>
+              <Icon name="icon-phone" className="w-5 h-5" />
             </div>
             <h3 className="mt-4 text-lg font-semibold text-dark">Phone</h3>
             <p className="mt-2 text-sm text-gray-medium">+001 634-3843</p>
@@ -167,7 +162,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="col-start-1 row-start-1 self-end translate-y-1/2 z-10 px-6">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+          <div className="max-w-134 mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name & Email Row */}
               <div className="grid grid-cols-2 gap-4">
