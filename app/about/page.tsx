@@ -1,8 +1,28 @@
 import Image from "next/image";
 import NewsletterSection from "@/components/NewsletterSection";
 
-const dataCard = [
-  {}
+const stepsData = [
+  {
+    id: "01",
+    title: "Brainstorming",
+    description:
+      "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X.",
+    link: "#",
+  },
+  {
+    id: "02",
+    title: "Analysing",
+    description:
+      "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps.",
+    link: "#",
+  },
+  {
+    id: "03",
+    title: "News Publishing",
+    description:
+      "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking.",
+    link: "#",
+  },
 ];
 
 export default function AboutPage() {
@@ -13,7 +33,7 @@ export default function AboutPage() {
         <p className="text-base font-bold text-gray-medium tracking-widest">
           ABOUT US
         </p>
-        <h1 className="mt-4 text-5xl max-w-182 mx-auto font-semibold text-dark md:text-5xl leading-tight">
+        <h1 className="mt-4 text-[clamp(1.5rem,4vw+1rem,3rem)] max-w-182 mx-auto font-bold text-dark leading-tight">
           Creative Blog Writting and publishing site
         </h1>
         <p className="mt-4 text-base leading-relaxed text-gray-medium max-w-[1050px]">
@@ -43,11 +63,11 @@ export default function AboutPage() {
         <p className="text-base text-gray-medium font-semibold tracking-widest">
           HOW WE WORK
         </p>
-        <div className="mt-6 flex items-end">
-          <h2 className="text-3xl max-w-125 font-bold text-dark md:text-5xl">
+        <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between">
+          <h2 className="text-[clamp(1.5rem,4vw+1rem,3rem)] leading-tight max-w-125 font-bold text-dark">
             I will show you how our team works
           </h2>
-          <p className="mt-4 max-w-2xl text-sm text-gray-medium">
+          <p className="mt-4 max-w-104 text-sm text-gray-medium">
             Bring to the table win-win market strategies to ensure perfect
             articles.
           </p>
@@ -55,114 +75,30 @@ export default function AboutPage() {
 
         {/* Process Steps Grid */}
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {/* Step 01 */}
-          <div className="rounded-3xl border-gray-light hover:bg-primary p-8 shadow-lg">
-            <div className="text-7xl font-bold text-gray-medium/10">01</div>
-            <h3 className="mt-4 text-2xl font-bold">Brainstorming</h3>
-            <p className="mt-4 leading-relaxed">
-              Bring to the table win-win survival strategies to ensure proactive
-              domination. At the end of the day, going forward, a new normal
-              that has evolved from generation X is on the runway heading
-              towards a streamlined cloud solution. User generated
-            </p>
-            <a
-              href="#"
-              className="mt-6 inline-block text-sm font-semibold text-white hover:underline"
+          {stepsData.map((step) => (
+            <div
+              key={step.id}
+              className="group rounded-2xl border-gray-light hover:bg-primary p-5 transition-all duration-300"
             >
-              Learn More
-            </a>
-          </div>
-
-          {/* Step 02 */}
-          <div className="rounded-3xl border border-gray-light bg-white p-8 shadow-sm">
-            <div className="text-5xl font-bold text-primary/20">02</div>
-            <h3 className="mt-4 text-2xl font-semibold text-dark">Analysing</h3>
-            <p className="mt-4 leading-relaxed text-gray-medium">
-              Capitalize on low hanging fruit to identify a ballpark value added
-              activity to beta test. Override the digital divide with additional
-              clickthroughs from DevOps. Nanotechnology immersion along the
-              information highway will close the loop on focusing solely on the
-              bottom line solely on the bottom line.
-            </p>
-            <a
-              href="#"
-              className="mt-6 inline-block text-sm font-semibold text-primary hover:text-primary/80"
-            >
-              Learn More
-            </a>
-          </div>
-
-          {/* Step 03 */}
-          <div className="rounded-3xl border border-gray-light bg-white p-8 shadow-sm">
-            <div className="text-5xl font-bold text-primary/20">03</div>
-            <h3 className="mt-4 text-2xl font-semibold text-dark">
-              News Publishing
-            </h3>
-            <p className="mt-4 leading-relaxed text-gray-medium">
-              Leverage agile frameworks to provide a robust synopsis for high
-              level overviews. Iterative approaches to corporate strategy foster
-              collaborative thinking to further the overall value proposition.
-              Organically grow the holistic world view of disruptive innovation
-              via workplace diversity and empowerment.
-            </p>
-            <a
-              href="#"
-              className="mt-6 inline-block text-sm font-semibold text-primary hover:text-primary/80"
-            >
-              Learn More
-            </a>
-          </div>
+              <div className="text-5xl md:text-7xl font-bold text-gray-medium/10 group-hover:text-white">
+                {step.id}
+              </div>
+              <h3 className="mt-4 text-[18px] md:text-2xl font-bold text-primary group-hover:text-white">
+                {step.title}
+              </h3>
+              <p className="mt-4 leading-relaxed text-base text-gray-medium group-hover:text-white/80">
+                {step.description}
+              </p>
+              <a
+                href={step.link}
+                className="mt-6 inline-block text-sm font-bold text-white pb-1 border-b-4 border-white"
+              >
+                Learn More
+              </a>
+            </div>
+          ))}
         </div>
       </section>
-
-      {/* Values Section */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <h2 className="text-3xl font-semibold text-dark md:text-4xl">
-          Core Values
-        </h2>
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <div>
-            <h3 className="text-lg font-semibold text-dark">
-              🎯 Clarity & Communication
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-gray-medium">
-              Clear communication about project scope, timelines, and technical
-              decisions ensures stakeholders stay informed and aligned
-              throughout the development process.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-dark">
-              ⚡ Performance First
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-gray-medium">
-              Every line of code is written with performance in mind. Fast load
-              times, smooth interactions, and optimized user experiences are
-              non-negotiable.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-dark">
-              🔧 Continuous Learning
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-gray-medium">
-              The tech landscape evolves rapidly. Staying current with new
-              frameworks, patterns, and best practices ensures solutions remain
-              modern and maintainable.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-dark">
-              🤝 User-Centric Design
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-gray-medium">
-              Building for real people with real needs. User feedback and
-              usability testing inform every design and development decision.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <NewsletterSection />
     </div>
   );
