@@ -120,31 +120,33 @@ export default function ContactPage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Office Card */}
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
+          <div className="flex flex-col items-center text-center pt-7 pb-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
+            <div className="flex h-13 w-13 items-center justify-center rounded-full bg-primary text-white">
               <Icon name="icon-office" className="w-5 h-5" />
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-dark">Office</h3>
+            <h3 className="mt-4 text-sm md:text-xl font-semibold text-primary">
+              Office
+            </h3>
             <p className="mt-2 text-sm text-gray-medium">
               Victoria Street, London, UK
             </p>
           </div>
 
           {/* Email Card */}
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
+          <div className="flex flex-col items-center text-center pt-7 pb-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
+            <div className="flex h-13 w-13 items-center justify-center rounded-full bg-primary text-white">
               <Icon name="icon-email" className="w-5 h-5" />
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-dark">Email</h3>
+            <h3 className="mt-4 text-lg font-semibold text-primary">Email</h3>
             <p className="mt-2 text-sm text-gray-medium">hello@zarrin.com</p>
           </div>
 
           {/* Phone Card */}
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
+          <div className="flex flex-col items-center text-center pt-7 pb-8 rounded-2xl border border-[#E0E0E0] hover:border-primary transition">
+            <div className="flex h-13 w-13 items-center justify-center rounded-full bg-primary text-white">
               <Icon name="icon-phone" className="w-5 h-5" />
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-dark">Phone</h3>
+            <h3 className="mt-4 text-lg font-semibold text-primary">Phone</h3>
             <p className="mt-2 text-sm text-gray-medium">+001 634-3843</p>
           </div>
         </div>
@@ -159,13 +161,12 @@ export default function ContactPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/30"></div>
         </div>
-        <div className="col-start-1 row-start-1 self-end translate-y-1/2 z-10 px-6">
+        <div className="col-start-1 row-start-1 self-end translate-y-[75%] md:translate-y-[80%] z-10 px-6">
           <div className="max-w-134 mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name & Email Row */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="name"
@@ -205,7 +206,7 @@ export default function ContactPage() {
               </div>
 
               {/* Phone & Subject Row */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="phone"
@@ -257,7 +258,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Your message..."
                   rows={5}
-                  className="mt-2 w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="mt-2 resize-none w-full rounded-lg border border-[#E0E0E0] bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   required
                 ></textarea>
               </div>
@@ -290,7 +291,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="h-[300px] md:h-[450px]"></div>
+      <div className="h-[60vh] md:h-[50vh]"></div>
 
       {/* Newsletter Section */}
       <NewsletterSection />
